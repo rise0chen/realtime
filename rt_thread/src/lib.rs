@@ -20,20 +20,11 @@ impl RtThread {
                 return Err(ErrorKind::NotRoot);
             }
             #[cfg(not(windows))]
-            if let Err(err) = set_thread_priority_and_policy(thread_id, priority, policy) {
-                let mut err_no = 0;
-                if let Error::OS(err) = err {
-                    err_no = err;
-                }
-                return Err(ErrorKind::Unknown(err_no as isize));
-            }
+            let result = set_thread_priority_and_policy(thread_id, priority, policy);
             #[cfg(windows)]
-            if let Err(err) = set_thread_priority(thread_id, priority) {
-                let mut err_no = 0;
-                if let Error::OS(err) = err {
-                    err_no = err;
-                }
-                return Err(ErrorKind::Unknown(err_no as isize));
+            let result = set_thread_priority(thread_id, priority);
+            if let Err(err) = result {
+                log::warn!("failed to set_thread_priority: {:?}", err);
             }
         }
         Ok(Self {
