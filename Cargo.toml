@@ -1,9 +1,10 @@
 [workspace]
 members = [
-  "realtime",
+  "realtime-core",
   "rt_thread",
   "rt_rtai",
   "rt_xenomai",
+  "realtime",
 ]
 
 [patch.crates-io]

@@ -1,4 +1,4 @@
-use realtime::*;
+use realtime_core::*;
 use std::thread;
 use std::time::{Duration, Instant};
 use thread_priority::*;

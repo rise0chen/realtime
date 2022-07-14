@@ -4,7 +4,7 @@ use core::sync::atomic::{AtomicU64, Ordering};
 use core::time::Duration;
 use libc::{c_int, c_longlong, c_void};
 use nix::unistd::Uid;
-use realtime::*;
+use realtime_core::*;
 
 static ID: AtomicU64 = AtomicU64::new(1);
 

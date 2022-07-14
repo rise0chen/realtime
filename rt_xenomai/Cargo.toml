@@ -6,13 +6,13 @@ license-file = "LICENSE"
 name = "rt-xenomai"
 readme = "./README.md"
 repository = "https://github.com/rise0chen/realtime.git"
-version = "0.1.1"
+version = "0.1.2"
 
 [dependencies]
 libc = "^0.2"
 log = "^0.4"
 nix = "0.24.0"
-realtime = {version = "0.1", path = "../realtime"}
+realtime-core = {version = "0.1", path = "../realtime-core"}
 
 [dev-dependencies]
 clock_source = "^0.2"

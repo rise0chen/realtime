@@ -3,7 +3,7 @@ mod ffi;
 use core::time::Duration;
 use libc::{c_longlong, c_ulong};
 use nix::unistd::Uid;
-use realtime::*;
+use realtime_core::*;
 
 pub struct Xenomai {
     start_time: c_longlong,

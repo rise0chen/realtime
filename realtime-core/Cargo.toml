@@ -1,0 +1,9 @@
+[package]
+authors = ["rise0chen <rise0chen@163.com>"]
+description = "realtime core"
+edition = "2018"
+license-file = "LICENSE"
+name = "realtime-core"
+readme = "./README.md"
+repository = "https://github.com/rise0chen/realtime.git"
+version = "0.1.0"
