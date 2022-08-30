@@ -6,12 +6,12 @@ license-file = "LICENSE"
 name = "rt-thread"
 readme = "./README.md"
 repository = "https://github.com/rise0chen/realtime.git"
-version = "0.1.2"
+version = "0.1.3"
 
 [dependencies]
 log = "^0.4"
 realtime-core = {version = "0.1", path = "../realtime-core"}
-thread-priority = "0.8.0"
+thread-priority = "0.9.2"
 
 [target.'cfg(not(windows))'.dependencies]
 nix = "0.24.0"
