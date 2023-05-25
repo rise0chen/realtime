@@ -11,7 +11,7 @@ version = "0.1.4"
 [dependencies]
 libc = "^0.2"
 log = "^0.4"
-nix = "0.24.0"
+nix = "0.26"
 realtime-core = {version = "0.1", path = "../realtime-core"}
 
 [dev-dependencies]
