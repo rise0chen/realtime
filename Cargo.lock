@@ -96,7 +96,7 @@ version = "0.1.0"
 
 [[package]]
 name = "rt-rtai"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "cc",
  "clock_source",
@@ -108,7 +108,7 @@ dependencies = [
 
 [[package]]
 name = "rt-thread"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
  "clock_source",
  "log",
@@ -119,7 +119,7 @@ dependencies = [
 
 [[package]]
 name = "rt-xenomai"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "cc",
  "clock_source",
