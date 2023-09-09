@@ -3,6 +3,9 @@
 int ffi_SCHED_FIFO() {
     return SCHED_FIFO;
 }
+int ffi_SCHED_RR() {
+    return SCHED_RR;
+}
 
 unsigned long ffi_nam2num(const char* name) {
     return nam2num(name);

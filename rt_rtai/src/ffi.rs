@@ -26,4 +26,5 @@ extern "C" {
     pub fn ffi_rt_get_time() -> c_longlong;
     pub fn ffi_rt_get_time_ns() -> c_longlong;
     pub fn ffi_SCHED_FIFO() -> c_int;
+    pub fn ffi_SCHED_RR() -> c_int;
 }

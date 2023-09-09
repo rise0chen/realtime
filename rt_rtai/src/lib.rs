@@ -20,9 +20,8 @@ impl Rtai {
             return Err(ErrorKind::NotRoot);
         }
         let task_id = ID.fetch_add(1, Ordering::Relaxed);
-        let sched_fifo = unsafe { ffi::ffi_SCHED_FIFO() };
-        log::debug!("task_id={}, SCHED_FIFO={}", task_id, sched_fifo);
-        let task = unsafe { ffi::ffi_rt_task_init_schmod(task_id, prio, 0, 0, sched_fifo, 0b11) };
+        let sched = unsafe { ffi::ffi_SCHED_RR() };
+        let task = unsafe { ffi::ffi_rt_task_init_schmod(task_id, prio, 0, 0, sched, 0b11) };
 
         Ok(Rtai {
             task,
