@@ -23,6 +23,7 @@ impl Rtai {
         let sched = unsafe { ffi::ffi_SCHED_RR() };
         let task = unsafe { ffi::ffi_rt_task_init_schmod(task_id, prio, 0, 0, sched, 0b11) };
 
+        core_affinity::set_for_current(core_affinity::CoreId { id: 0 });
         Ok(Rtai {
             task,
             task_id,

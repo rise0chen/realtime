@@ -17,9 +17,12 @@ impl Xenomai {
         }
         unsafe { ffi::init() };
         match unsafe { ffi::shadow(prio, 1) } {
-            0 => Ok(Xenomai { start_time: 0 }),
-            x => Err(ErrorKind::Unknown(x as isize)),
+            0 => {}
+            x => return Err(ErrorKind::Unknown(x as isize)),
         }
+
+        core_affinity::set_for_current(core_affinity::CoreId { id: 0 });
+        Ok(Self { start_time: 0 })
     }
 
     pub fn get_time_ns() -> u64 {
@@ -83,7 +86,7 @@ mod tests {
             if now - last_time > 1_200_000 {
                 println!("{}", now - last_time - 1_000_000);
             }
-            assert!(now - last_time  < 1_200_000);
+            assert!(now - last_time < 1_200_000);
             last_time = now;
         }
     }

@@ -27,6 +27,8 @@ impl RtThread {
                 log::warn!("failed to set_thread_priority: {:?}", err);
             }
         }
+
+        core_affinity::set_for_current(core_affinity::CoreId { id: 0 });
         Ok(Self {
             last_time: Instant::now(),
             period: Duration::ZERO,
