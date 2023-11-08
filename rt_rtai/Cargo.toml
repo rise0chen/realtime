@@ -6,7 +6,7 @@ license-file = "LICENSE"
 name = "rt-rtai"
 readme = "./README.md"
 repository = "https://github.com/rise0chen/realtime.git"
-version = "0.1.8"
+version = "0.1.9"
 
 [dependencies]
 core_affinity = "0.8"

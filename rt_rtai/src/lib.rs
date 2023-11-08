@@ -20,7 +20,7 @@ impl Rtai {
             return Err(ErrorKind::NotRoot);
         }
         let task_id = ID.fetch_add(1, Ordering::Relaxed);
-        let sched = unsafe { ffi::ffi_SCHED_RR() };
+        let sched = unsafe { ffi::ffi_SCHED_FIFO() };
         let task = unsafe { ffi::ffi_rt_task_init_schmod(task_id, prio, 0, 0, sched, 0b11) };
 
         if !core_affinity::set_for_current(core_affinity::CoreId { id: 0 }) {

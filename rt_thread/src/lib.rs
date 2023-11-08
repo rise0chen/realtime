@@ -12,7 +12,7 @@ impl RtThread {
         if prio > 0 {
             let thread_id = thread_native_id();
             #[cfg(not(windows))]
-            let policy = ThreadSchedulePolicy::Realtime(RealtimeThreadSchedulePolicy::RoundRobin);
+            let policy = ThreadSchedulePolicy::Realtime(RealtimeThreadSchedulePolicy::Fifo);
             let rt = if prio > 99 { 99 } else { prio };
             let priority = ThreadPriority::Crossplatform(rt.try_into().unwrap());
             #[cfg(not(windows))]
