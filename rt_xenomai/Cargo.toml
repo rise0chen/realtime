@@ -6,10 +6,9 @@ license-file = "LICENSE"
 name = "rt-xenomai"
 readme = "./README.md"
 repository = "https://github.com/rise0chen/realtime.git"
-version = "0.1.8"
+version = "0.1.11"
 
 [dependencies]
-core_affinity = "0.8"
 libc = "^0.2"
 log = "^0.4"
 nix = "0.26"

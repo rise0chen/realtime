@@ -40,23 +40,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "core_affinity"
-version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "622892f5635ce1fc38c8f16dfc938553ed64af482edb5e150bf4caedbfcb2304"
-dependencies = [
- "libc",
- "num_cpus",
- "winapi",
-]
-
-[[package]]
-name = "hermit-abi"
-version = "0.3.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d77f7ec81a6d05a3abb01ab6eb7590f6083d08449fe5a1c8b1e620283546ccb7"
-
-[[package]]
 name = "libc"
 version = "0.2.150"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -91,16 +74,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "num_cpus"
-version = "1.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4161fcb6d602d4d2081af7c3a45852d875a03dd337a6bfdd6e06407b61342a43"
-dependencies = [
- "hermit-abi",
- "libc",
-]
-
-[[package]]
 name = "pin-utils"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -122,11 +95,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rt-rtai"
-version = "0.1.9"
+version = "0.1.11"
 dependencies = [
  "cc",
  "clock_source",
- "core_affinity",
  "libc",
  "log",
  "nix",
@@ -135,10 +107,9 @@ dependencies = [
 
 [[package]]
 name = "rt-thread"
-version = "0.1.9"
+version = "0.1.11"
 dependencies = [
  "clock_source",
- "core_affinity",
  "log",
  "nix",
  "realtime-core",
@@ -147,11 +118,10 @@ dependencies = [
 
 [[package]]
 name = "rt-xenomai"
-version = "0.1.8"
+version = "0.1.11"
 dependencies = [
  "cc",
  "clock_source",
- "core_affinity",
  "libc",
  "log",
  "nix",

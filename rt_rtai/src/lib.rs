@@ -23,9 +23,6 @@ impl Rtai {
         let sched = unsafe { ffi::ffi_SCHED_FIFO() };
         let task = unsafe { ffi::ffi_rt_task_init_schmod(task_id, prio, 0, 0, sched, 0b11) };
 
-        if !core_affinity::set_for_current(core_affinity::CoreId { id: 0 }) {
-            log::warn!("failed to set_cpu_affinity");
-        }
         Ok(Rtai {
             task,
             task_id,

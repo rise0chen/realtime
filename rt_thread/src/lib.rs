@@ -28,9 +28,6 @@ impl RtThread {
             }
         }
 
-        if !core_affinity::set_for_current(core_affinity::CoreId { id: 0 }) {
-            log::warn!("failed to set_cpu_affinity");
-        }
         Ok(Self {
             last_time: Instant::now(),
             period: Duration::ZERO,
