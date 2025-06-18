@@ -4,7 +4,8 @@ use std::time::{Duration, Instant};
 use thread_priority::*;
 
 pub struct RtThread {
-    last_time: Instant,
+    timer: Instant,
+    last_time: Duration,
     period: Duration,
 }
 impl RtThread {
@@ -29,14 +30,15 @@ impl RtThread {
         }
 
         Ok(Self {
-            last_time: Instant::now(),
+            timer: Instant::now(),
+            last_time: Duration::ZERO,
             period: Duration::ZERO,
         })
     }
 }
 impl RealTime for RtThread {
     fn start(&mut self, period: Duration) -> Result<()> {
-        self.last_time = Instant::now();
+        self.last_time = self.timer.elapsed();
         self.period = period;
         Ok(())
     }
@@ -49,7 +51,7 @@ impl RealTime for RtThread {
             return Err(ErrorKind::NotStart);
         };
         let next_time = self.last_time + self.period;
-        let now = Instant::now();
+        let now = self.timer.elapsed();
         if now < next_time {
             let sleep = next_time - now;
             thread::sleep(sleep);

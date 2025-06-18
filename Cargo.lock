@@ -113,7 +113,7 @@ dependencies = [
 
 [[package]]
 name = "rt-thread"
-version = "0.1.12"
+version = "0.1.13"
 dependencies = [
  "clock_source",
  "log",
